@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 function Product() {
   const [products, setProducts] = useState([]);
-  const getData = () => {
-    axios.get(`${process.env.REACT_APP_URL}api/react/products`)
+  const getData = async () => {
+    await axios.get(`${process.env.REACT_APP_URL}api/react/products`)
       .then((response) => {
         setProducts(response.data.products);
       });
